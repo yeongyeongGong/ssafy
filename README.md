@@ -33,8 +33,6 @@
 #이거슨 코드드 설명입니다.
 ```
 
- ![img.jpg](C:\Users\SSAFY\Desktop\img.jpg)
+ ![img.jpg](img.jpg)
 
 만약 이미지가 포함된 markdown을 제출 할 때는 이미지도 같이 제출해야함.
-
-
