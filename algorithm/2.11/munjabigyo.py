@@ -1,19 +1,19 @@
-# T = int(input())
-#
-# for tc in range(1, T + 1):
-#     str1 = list(map(str, input()))
-#     str2 = list(map(str, input()))
-#     n, m = len(str1), len(str2)
-#
-#     for i in range(m - n + 1):  # str2에서 str1의 길이를 뺀만큼 반복
-#         instr2 = 0
-#         for j in range(n):
-#             if str1[j] == str2[i + j]:  # str[j]가 str2안에 있는지 확인
-#                 break  # 없으면 break
-#         instr2 = 1  #
-#
-#     print(f'#{tc} {instr2}')
-# --------------------
+T = int(input())
+
+for tc in range(1, T + 1):
+    str1 = list(map(str, input()))
+    str2 = list(map(str, input()))
+    n, m = len(str1), len(str2)
+
+    for i in range(m - n + 1):  # str2에서 str1의 길이를 뺀만큼 반복
+        instr2 = 0
+        for j in range(n):
+            if str1[j] == str2[i + j]:  # str[j]가 str2안에 있는지 확인
+                break  # 없으면 break
+        instr2 = 1  #
+
+    print(f'#{tc} {instr2}')
+# --------------------위에는 내가 한거 작동안됨;;;;
 
 def solve(str1, str2):
     for i in range(N - M + 1):  # i: 비교하려는 시작 인덱스
