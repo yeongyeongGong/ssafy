@@ -1,31 +1,21 @@
-# 괄호 지우는 함수
 def delete_parentheses(arr):
     stack = []
     for i in arr:
-        # i가 종류 상관없이 여는괄호면 stack에 append
+        # 여는 괄호는 스택에 추가
         if i == '{' or i == '(':
             stack.append(i)
-        # stack이 비어있지 않고, top이 { 일때
-        if stack and stack[-1] == '{':
-            if i == '}':  # i가 }면 pop으로 제거
-                stack.pop()
-            else:  # 짝이 맞지않으면 0을 반환
+        # 닫는 괄호를 만나면 스택이 비어있는지 먼저 체크
+        elif i == '}':
+            if not stack or stack[-1] != '{':  # 스택이 비었거나 짝이 안 맞으면
                 return 0
-        # stack이 비어있지 않고, top이 ( 일때
-        if stack and stack[-1] == '(':
-            if i == ')':  # i가 )면 pop으로 제거
-                stack.pop()
-            else:  # 짝이 맞지 않으면 0을 반환
+            stack.pop()  # 짝이 맞으면 pop()
+        elif i == ')':
+            if not stack or stack[-1] != '(':  # 스택이 비었거나 짝이 안 맞으면
                 return 0
-            # 닫는괄호로 시작할때
-        if (stack and stack[-1] == ')') and (stack and stack[-1] == '}'):
-            return 0
+            stack.pop()  # 짝이 맞으면 pop()
 
-    print(stack)
-    if stack:
-        return 0
-    else:
-        return 1
+    # 스택이 비어 있으면 짝이 맞음 → 1 반환, 남아 있으면 짝이 안 맞음 → 0 반환
+    return 1 if not stack else 0
 
 
 T = int(input())
