@@ -5,7 +5,7 @@ M = 10
 N = len(arr)
 check = [0] * N  # 요소가 0이면 idx 번째 요소는 부분집합에 포함된다.
 
-
+# 이 구조 외우기!!!
 # idx: 요소의 idx
 # 요소가 부분집합에 포함되는지 안되는지 결정하는 함수
 def powerset(idx,tmp_sum):
@@ -17,7 +17,7 @@ def powerset(idx,tmp_sum):
             for i in range(N):
                 if check[i]:
                     print(arr[i], end=',')
-        print()
+            print()
         return
     # 특정상황에서 모든 경우의 수 수행해보기
     check[idx] = 1
@@ -25,6 +25,5 @@ def powerset(idx,tmp_sum):
     check[idx] = 0
     powerset(idx + 1, tmp_sum)
 
-powerset(0)
+powerset(0,0)
 
-#--------받아쓰기 잘못함;;;; 오류남;;;;
