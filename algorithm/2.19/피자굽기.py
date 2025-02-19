@@ -3,7 +3,6 @@ for tc in range(1, T + 1):
     N, M = map(int, input().split())
     input_lst = list(map(int, input().split()))
     pizza_list = [el for el in enumerate(input_lst, start=1)]
-    print(pizza_list)
     queue = []  # 화덕
     # pizza_lst = []
     # for i in range(M):
