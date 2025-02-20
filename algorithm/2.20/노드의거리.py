@@ -1,0 +1,30 @@
+def bfs(S,G):
+    # 거리 계산해야 하니까... 거리도 같이 저장
+    queue = [(S,0)]
+    visited = [0] * (V + 1)
+    visited[S] = 1  # 시작점 방문표시
+
+    while queue:
+        front, dist = queue.pop(0)
+        if front == G:
+            return dist
+        for i in range(1,V+1):
+            # g[front][i] == 1이면 front 와 i 가 인접한 정점
+            # i에 방문하지 않았으면, 방문
+            if g[front][i] and not visited[i]:
+                visited[i] = 1
+                # 이전 정점에서 한 번더 이동 >> dist + 1
+                queue.append((i, dist + 1))
+
+
+T = int(input())  # 테스트케이스
+for tc in range(1, T + 1):
+    V, E = map(int, input().split())  # V : 노드 갯수, E: 간선정보 갯수
+    g = [[0] * (V+1) for _ in range(V+1)]
+    for _ in range(E):  # 간선정보갯수만큼 반복해서 입력받기
+        a,b = map(int, input().split())  # 노드 정보
+        g[a][b] = 1
+        g[b][a] = 1
+    S, G = map(int, input().split())  # S : 출발노드, G: 도착노드
+    result = bfs(S,G)
+    print(f'#{tc} {result}')
