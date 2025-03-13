@@ -11,14 +11,11 @@ for tc in range(1, T + 1):
     container_weight.sort(reverse=True)
     truck_weight.sort(reverse=True)
 
-    print(container_weight)
-    print(truck_weight)
-
     weight = 0  # 적재컨테이너 무게
     for i in range(len(truck_weight)):
         for j in range(len(container_weight)):
-            if j <= i:
-                weight += i
+            if container_weight[j] <= truck_weight[i]:
+                weight += container_weight[j]
                 container_weight.pop(j)
                 break
 
