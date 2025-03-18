@@ -17,6 +17,7 @@ def perm_no_dup(idx, R):
             perm_arr[idx] = dice[i]
             check[i] = 1
             perm_no_dup(idx + 1,R)
+
             check[i] = 0
 
 
