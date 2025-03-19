@@ -1,6 +1,6 @@
 # 배터리를 교체하는 함수
 def change_charger():
-
+    pass
 
 
 
